@@ -6,10 +6,12 @@ Throttle functions based on how much cpu time they use.
 ###Usage
 
 ```javascript
-	bottle(fn,pct); 
 	//where pct is a float representing the cpu ceiling. 
 	//If I want fn to not use more than 10% of the cpu, then pct === .1	
+	bottle(fn,pct); 
+```
 
+```html
 	<script src='bottle.js'></script>
 	<script>
 		console.log(typeof expensiveProcess === 'function');
