@@ -5,15 +5,18 @@ Throttle functions based on how much cpu time they use.
 
 ###Usage
 
-	bottle(fn,pct); //where pct is a float representing the cpu ceiling. If I want fn to not use more than 10% of the cpu, then pct === .1	
+	bottle(fn,pct); 
+	//where pct is a float representing the cpu ceiling. 
+	//If I want fn to not use more than 10% of the cpu, then pct === .1	
 
-<script src='bottle.js'></script>
-<script>
-	console.log(typeof expensiveProcess === 'function');
-		--> true
-	var bottledProcess = bottle(expensiveProcess,.01);
-	doc.on('change',bottledProcess);
-	
+	<script src='bottle.js'></script>
+	<script>
+		console.log(typeof expensiveProcess === 'function');
+			--> true
+		var bottledProcess = bottle(expensiveProcess,.01);
+		doc.on('change',bottledProcess);
+	</script>	
+
 ###Use case
 
 Some processes follow this pattern:
