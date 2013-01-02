@@ -6,7 +6,7 @@ var bottle = function(fn,pct) {
 		lastDuration = 0;
 	return function() {
 		startTime = new Date().getTime();
-		if(lastDuration/pct < startTime - whenLast) {
+		if(!whenLast || lastDuration/pct < startTime - whenLast) {
 			startTime = new Date().getTime();
 			res = fn(); 
 			whenLast = new Date().getTime();
