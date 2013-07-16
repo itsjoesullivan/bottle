@@ -6,8 +6,8 @@ Throttle functions based on how much cpu time they use.
 ###Usage
 
 ```javascript
-	//where pct is a float representing the cpu ceiling. 
-	//If I want fn to not use more than 10% of the cpu, then pct === .1	
+	// where pct is a float representing the cpu ceiling. 
+	// If you want fn to not use more than 10% of the cpu, then pct === .1	
 	bottle(fn,pct); 
 ```
 
