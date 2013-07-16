@@ -68,7 +68,6 @@ describe('bottle', function() {
 						performed++;
 					}
 					if(count === 10) {
-						console.log(performed / 10);
 						
 						(performed).should.be.below(11);
 						done();

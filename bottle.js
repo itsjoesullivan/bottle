@@ -6,18 +6,16 @@
  *
  * */
 var bottle = function(fn,pct) {
-	var lastTime = new Date().getTime(),
-		startTime,
+	var startTime,
 		bottledFn,
-		whenLast,
+		whenLastRun,
 		lastDuration = 0;
 	return function() {
 		startTime = new Date().getTime();
-		if(!whenLast || lastDuration/pct < startTime - whenLast) {
-			startTime = new Date().getTime();
+		if((!whenLastRun || lastDuration/pct < startTime - whenLastRun)) {
 			bottledFn = fn.apply(fn,arguments)
-			whenLast = new Date().getTime();
-			lastDuration = whenLast - startTime;
+			whenLastRun = new Date().getTime();
+			lastDuration = whenLastRun - startTime;
 			return bottledFn;
 		}       
 	};
